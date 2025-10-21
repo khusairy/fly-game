@@ -76,8 +76,7 @@ All burns, transfers, stalls, and payouts emit events for transparency.
 ---
 
 ## 🏗️ Repo Layout (Windsurf Project)
-
-```
+```plaintext
 fly/
 ├── app/              # Next.js frontend (React UI, wallet adapter)
 ├── programs/         # Anchor smart contracts
