@@ -41,8 +41,13 @@ jobs:
           rsync -a private/fly-assets/exports/ public/assets/ 2>/dev/null || true
           cp private/fly-devops/scripts/*.sh devops/ 2>/dev/null || true
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
       - name: Install deps
         run: npm ci
 
-      - name: Build web
+      - name: Build
         run: npm run build

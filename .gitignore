@@ -1,41 +1,24 @@
-# ===========================
-# 🌐 General
-# ===========================
 .DS_Store
 Thumbs.db
 *.log
 *.env
-*.env.local
-*.env.*.local
+*.env.*
 .envrc
-.envrc.local
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-package-lock.json
-pnpm-lock.yaml
-# (Optional: remove this if you want lockfile tracking)
 
-# ===========================
-# 🧰 Node / Next.js
-# ===========================
 node_modules/
 .next/
 out/
-.cache/
 coverage/
-build/
 dist/
+build/
 .vscode/
 .idea/
 *.tsbuildinfo
 
-# ===========================
-# ⚙️ Solana / Anchor
-# ===========================
+# Anchor and Solana
 target/
-.mpl_cache/
 .anchor/
+.mpl_cache/
 keys/
 test-ledger/
 *.so
@@ -44,68 +27,13 @@ test-ledger/
 *.exe
 *.out
 
-# Private dev builds (not for public repo)
-fly-core/
-fly-assets/
-fly-devops/
+# Private artifacts copied by CI
+private/
 
-# ===========================
-# 🪄 Frontend assets
-# ===========================
-/public/temp/
-/public/uploads/
-/public/previews/
-/public/test_assets/
-*.psd
-*.ai
-*.blend
-*.wav
-*.mp3
-*.zip
-
-# ===========================
-# 🧪 Testing / Local Data
-# ===========================
-*.local.json
-*.local.yml
-*.local.yaml
-*.local.ts
-*.local.js
-*.dev.json
-*.cache.json
-
-# ===========================
-# 🧠 OS / IDE
-# ===========================
-*.swp
-*.swo
-*.swn
-*.bak
-*.tmp
-*.orig
-*~
-.vscode/*
-!.vscode/settings.json
-!.vscode/extensions.json
-!.vscode/launch.json
-!.vscode/tasks.json
-
-# ===========================
-# ⚔️ Submodules
-# ===========================
-# Ignore submodule internals but keep reference
-fly-core/*
-!fly-core/.gitmodules
-!fly-core/README.md
-
-fly-assets/*
-!fly-assets/.gitmodules
-!fly-assets/README.md
-
-# ===========================
-# 🪰 Misc
-# ===========================
-# Local preview builds or exports
-export/
-sandbox/
-notes/
+# Keep folders but ignore contents
+public/assets/*
+!public/assets/.gitkeep
+programs/idl/*
+!programs/idl/.gitkeep
+devops/*
+!devops/.gitkeep
