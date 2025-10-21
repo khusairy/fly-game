@@ -51,6 +51,16 @@ Every match settles transparently on-chain — no servers, no middlemen, just sk
 
 ---
 
+### 🪙 $FLY Token Contract
+| Network | Address | Type |
+|----------|----------|------|
+| **Solana Mainnet** | `GuESBZaZsSeDLJK8vKmuhK3rSCbKPiC6xwPpviUPxSqN` | SPL Token |
+| **Explorer** | [View on Solscan](https://solscan.io/token/GuESBZaZsSeDLJK8vKmuhK3rSCbKPiC6xwPpviUPxSqN) | — |
+
+> ⚠️ Always verify before transacting — this is the **only official $FLY token address**.
+
+---
+
 ## 🧱 On-Chain Architecture (Anchor)
 
 | Account | Purpose |
