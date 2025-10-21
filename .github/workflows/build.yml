@@ -1,0 +1,48 @@
+name: Build with private repos
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout public repo
+        uses: actions/checkout@v4
+
+      - name: Checkout fly-core (private)
+        uses: actions/checkout@v4
+        with:
+          repository: khusairy/fly-core
+          token: ${{ secrets.CI_PAT }}
+          path: private/fly-core
+
+      - name: Checkout fly-assets (private)
+        uses: actions/checkout@v4
+        with:
+          repository: khusairy/fly-assets
+          token: ${{ secrets.CI_PAT }}
+          path: private/fly-assets
+
+      - name: Checkout fly-devops (private)
+        uses: actions/checkout@v4
+        with:
+          repository: khusairy/fly-devops
+          token: ${{ secrets.CI_PAT }}
+          path: private/fly-devops
+
+      - name: Prepare artifacts
+        run: |
+          mkdir -p programs/idl public/assets devops
+          cp private/fly-core/idl/*.json programs/idl/ 2>/dev/null || true
+          rsync -a private/fly-assets/exports/ public/assets/ 2>/dev/null || true
+          cp private/fly-devops/scripts/*.sh devops/ 2>/dev/null || true
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Build web
+        run: npm run build

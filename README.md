@@ -165,3 +165,13 @@ Reset: match history, season leaderboards
 > Stake $FLY, outsmart your opponent, and earn glory for the Swarm.  
 > **30 seconds to act — draw or fall.**  
 > *Only the brave FLY.*
+
+---
+
+## CI
+This repo pulls from private repos during CI.
+- fly-core -> copies IDL files into programs/idl
+- fly-assets -> copies exported media into public/assets
+- fly-devops -> copies shell scripts into devops/
+
+Set a repo secret named CI_PAT with read access to these repos.
