@@ -1,12 +1,12 @@
 [build]
-  command = "pnpm install && pnpm run build"
-  publish = "out"
+command = "pnpm install && pnpm run build"
+publish = "out"
 
 [build.environment]
-  NODE_VERSION = "20.18.0"
-  PNPM_VERSION = "9"
+NODE_VERSION = "20.18.0"
+PNPM_VERSION = "9"
 
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+from = "/*"
+to = "/index.html"
+status = 200
