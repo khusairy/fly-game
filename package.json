@@ -5,7 +5,7 @@
   "scripts": {
     "refresh": "powershell -ExecutionPolicy Bypass -File ./scripts/dev-refresh.ps1",
     "dev": "pnpm dev",
-    "build": "next build && next export -o out",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
